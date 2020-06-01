@@ -92,7 +92,7 @@ session_start();
               <!-- Top Left -->
               <div class="top-left">
                 <ul class="list-main">
-                  <li><i class="ti-headphone-alt"></i> +57 (300) 452-9562</li>
+                  <li><i class="ti-headphone-alt"></i> +99 (999) 999-9999</li>
                   <li><i class="ti-email"></i> support@eshop.com</li>
                 </ul>
               </div>
