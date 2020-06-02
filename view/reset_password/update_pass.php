@@ -29,23 +29,21 @@
     <main>
       <div class="container-fluid">
         <div class="row">
-          <div class="col-sm-6 login-section-wrapper">
+        <div class="col-sm-6 login-section-wrapper">
             <div class="brand-wrapper">
             <a href="index.php"><img src="../static/images/logo.png" alt="logo" class="logo" /></a>
             </div>
             <div class="login-wrapper my-auto">
               <h1 class="login-title">Actualizar contraseña</h1>
-              <form action="" method="POST">
+
+              <form action="../../controller/ACTIONS/act_update_pass.php" method="POST">
                 <div class="form-group mb-4">
                   <label for="password">Nueva contraseña</label>
                   <input
                     type="password"
-                    name="pass"
-                    id="pass"
+                    name="pwd"
                     class="form-control"
                     placeholder="enter your passsword"
-                    vali
-                    class="validate-input"
                     data-validate="Type password"
                   />
                 </div>
@@ -54,22 +52,17 @@
                   <label for="password">Confirmar contraseña</label>
                   <input
                     type="password"
-                    name="confirm_pass"
-                    id="confirm_pass"
-                    class="form-control"
+                    name="pwd-repeat"
+                    class="form-control validate-input"
                     placeholder="confirm your passsword"
-                    vali
-                    class="validate-input"
                     data-validate="Type password"
                   />
                 </div>
 
                 <input
-                  name="update_pass"
-                  id="update_pass"
+                  name="reset-password-submit"
                   class="btn btn-block login-btn"
                   type="submit"
-                  value="Actualizar"
                 />
               </form>
             </div>

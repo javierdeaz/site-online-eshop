@@ -36,22 +36,19 @@
             <div class="login-wrapper my-auto">
               <h1 class="login-title">Recuperar contraseña</h1>
               <p>Se le enviara un correo electrónico con las instrucciones para reestablecer su contraseña.</p>
-              <form action="" method="POST">
+              <form action="../../controller/ACTIONS/act_reset_pass.php" method="POST">
                 <div class="form-group">
                   <label for="email">Correo electrónico</label>
                   <input
                     type="text"
                     name="email"
-                    id="email"
-                    class="form-control"
+                    class="form-control validate-input"
                     placeholder="correo@example.com"
-                    class="validate-input"
                     data-validate="Type email"
                   />
                 </div>
                 <input
-                  name="confirm_email"
-                  id=""
+                  name="reset-request-submit"
                   class="btn btn-block login-btn"
                   type="submit"
                   value="Confirmar"

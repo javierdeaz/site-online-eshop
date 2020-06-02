@@ -1,6 +1,10 @@
 <?php
 require_once 'GoogleApi/config.php';
 $loginURL = $gClient->createAuthUrl();
+
+if (!empty($_SESSION['errMsg'])) {
+    $errMsg = $_SESSION['errMsg'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -74,6 +78,16 @@ $loginURL = $gClient->createAuthUrl();
                   value="Ingresar"
                 />
               </form>
+
+              <!-- ZONA DE MENSAJE -->
+              <?php if (!empty($errMsg)): ?>
+                <div class="alert alert-danger" role="alert">
+                  <strong><?=$errMsg?></strong>
+                </div>
+              <?php
+$_SESSION['errMsg'] = '';
+endif;?>
+
               <a href="reset_password/reset_pass.php" class="forgot-password-link"
                 >¿Quieres recuperar tu contraseña?</a
               >
