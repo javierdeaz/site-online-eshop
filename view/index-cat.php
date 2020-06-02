@@ -1,16 +1,10 @@
 <?php
-session_start();
-
-require_once(__DIR__."/../controller/MDB/mdbUsuario.php");
-
 require_once __DIR__ . "/../controller/ACTIONS/act_travelproduc.php";
 
-if (!isset($_SESSION['ID_USUARIO'])) {
-    header("Location: /");
-    exit();
-}
+session_start();
+$id_cat = $_GET['id_cat'];
 
-$nombre_usuario =  $_SESSION['NOMBRE_USUARIO'];
+
 
 ?>
 <!DOCTYPE html>
@@ -26,7 +20,7 @@ $nombre_usuario =  $_SESSION['NOMBRE_USUARIO'];
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <!-- Title Tag  -->
-    <title>Eshop - Bienvenido</title>
+    <title>Eshop - Inicio</title>
     <!-- Favicon -->
     <link
       rel="icon"
@@ -60,8 +54,6 @@ $nombre_usuario =  $_SESSION['NOMBRE_USUARIO'];
       rel="stylesheet"
       href="static/static_template/css/themify-icons.css"
     />
-    <!-- Jquery Ui -->
-    <link rel="stylesheet" href="static/static_template/css/jquery-ui.css" />
     <!-- Nice Select CSS -->
     <link rel="stylesheet" href="static/static_template/css/niceselect.css" />
     <!-- Animate CSS -->
@@ -103,7 +95,7 @@ $nombre_usuario =  $_SESSION['NOMBRE_USUARIO'];
               <!-- Top Left -->
               <div class="top-left">
                 <ul class="list-main">
-                  <li><i class="ti-headphone-alt"></i> +57 (300) 454-9596</li>
+                  <li><i class="ti-headphone-alt"></i> +99 (999) 999-9999</li>
                   <li><i class="ti-email"></i> support@eshop.com</li>
                 </ul>
               </div>
@@ -113,11 +105,9 @@ $nombre_usuario =  $_SESSION['NOMBRE_USUARIO'];
               <!-- Top Right -->
               <div class="right-content">
                 <ul class="list-main">
-                 
-                  <li><i class="ti-user"></i> <a href="#"><?php echo($nombre_usuario); ?></a></li>
-                  <li>
-                    <i class="ti-power-off"></i><a href="../controller/ACTIONS/act_logout.php">Cerrar sesión</a>
-                  </li>
+
+                  <li> <i class="ti-user"></i> <a href="#">Mi cuenta</a> </li>
+                  <li> <i class="ti-power-off"></i><a href="login.php">Login</a> </li>
                 </ul>
               </div>
               <!-- End Top Right -->
@@ -163,11 +153,10 @@ $nombre_usuario =  $_SESSION['NOMBRE_USUARIO'];
             <div class="col-lg-8 col-md-7 col-12">
               <div class="search-bar-top">
                 <div class="search-bar">
-                  
                   <form>
                     <input
                       name="search"
-                      placeholder="Busca tu producto..."
+                      placeholder="Buscar Producto....."
                       type="search"
                     />
                     <button class="btnn"><i class="ti-search"></i></button>
@@ -175,15 +164,6 @@ $nombre_usuario =  $_SESSION['NOMBRE_USUARIO'];
                 </div>
               </div>
             </div>
-            <div class="col-lg-2 col-md-3 col-12">
-              <div class="right-bar">
-                <!-- Search Form -->
-                
-                  <!-- Shopping Item -->
-                 
-                  <!--/ End Shopping Item -->
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -193,14 +173,29 @@ $nombre_usuario =  $_SESSION['NOMBRE_USUARIO'];
         <div class="container">
           <div class="cat-nav-head">
             <div class="row">
-              <div class="col-12">
+              <div class="col-lg-3">
+                <div class="all-category">
+                  <h3 class="cat-heading">
+                    <i class="fa fa-bars" aria-hidden="true"></i>CATEGORIAS
+                  </h3>
+                  <ul class="main-category">
+
+                    <li><a href="index-cat.php?id_cat=2">Hombre</a></li>
+                    <li><a href="index-cat.php?id_cat=1">Mujer</a></li>
+                    <li><a href="index-cat.php?id_cat=4">Niños</a></li>
+                    <li><a href="index-cat.php?id_cat=3">Niñas</a></li>
+
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-9 col-12">
                 <div class="menu-area">
                   <!-- Main Menu -->
                   <nav class="navbar navbar-expand-lg">
                     <div class="navbar-collapse">
                       <div class="nav-inner">
                         <ul class="nav main-menu menu navbar-nav">
-                          <li class="active"><a href="#">Inicio</a></li>
+                          <li class="active"><a href="index.php">Inicio</a></li>
                           <li><a href="#">Productos <span class="new">New</span> </a></li>
 
                           <li><a href="#">Servicios</a></li>
@@ -221,59 +216,43 @@ $nombre_usuario =  $_SESSION['NOMBRE_USUARIO'];
     </header>
     <!--/ End Header -->
 
-    <!-- Breadcrumbs -->
-    
-    <!-- End Breadcrumbs -->
-
-    <!-- Product Style -->
-    <section class="product-area shop-sidebar shop section">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-4 col-12">
-            <div class="shop-sidebar">
-              <!-- Single Widget -->
-              <div class="single-widget category">
-                <h3 class="title">Categorias</h3>
-                <ul class="categor-list">
-                  <li><a href="shop-grid-categoria.php?id_cat=2">Hombre</a></li>
-                  <li><a href="shop-grid-categoria.php?id_cat=1">Mujer</a></li>
-                  <li><a href="shop-grid-categoria.php?id_cat=4">Niños</a></li>
-                  <li><a href="shop-grid-categoria.php?id_cat=3">Niñas</a></li>
-                </ul>
+    <!-- Slider Area -->
+    <section class="hero-slider">
+      <!-- Single Slider -->
+      <div class="single-slider">
+        <div class="container">
+          <div class="row no-gutters">
+            <div class="col-lg-9 offset-lg-3 col-12">
+              <div class="text-inner">
+                <div class="row">
+                  <div class="col-lg-7 col-12">
+                    <div class="hero-text">
+                      <h1><span>Super Tienda Online </span>Prendas de gran calidad</h1>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <!--/ End Single Widget -->
-              <!-- Shop By Price -->
-              
-              <!--/ End Shop By Price -->
-              <!-- Single Widget -->
-             
-              <!--/ End Single Widget -->
-              <!-- Single Widget -->
-              
-              <!--/ End Single Widget -->
             </div>
           </div>
-          <div class="col-lg-9 col-md-8 col-12">
-            <div class="row">
-              <div class="col-12">
-                <!-- Shop Top -->
-                
-                <!--/ End Shop Top -->
-              </div>
-            </div>
-            <div class="row">
+        </div>
+      </div>
+
+
+      <!--/ End Single Slider -->
+      <div class="product-area section">
+        <div class="container">
+          
+               <div class="tab-content" id="myTabContent">
 
 
 
-
-
-
-
-
-            <?php
+               <div class="tab-pane fade show active" id="man" role="tabpanel">
+                  <div class="tab-single">
+                    <div class="row">
+                    <?php
                     for ($j = 0; $j < sizeof($productos_activos); $j++) {
                         $producto = $productos_activos[$j];
-                        
+                        if ($producto->getId_categoria() == $id_cat) {
                             ?>
                       <div class="col-xl-3 col-lg-4 col-md-4 col-12">
                         <div class="single-product">
@@ -294,9 +273,9 @@ $nombre_usuario =  $_SESSION['NOMBRE_USUARIO'];
                           </div>
                           <div class="product-content">
 
-                            <h4>
+                            <h3>
                             <?php echo $producto->getNombre_producto(); ?>
-                            </h4>
+                            </h3>
 
                             <div class="product-price">
                               <span><?php echo $producto->getDescription(); ?></span>
@@ -308,37 +287,50 @@ $nombre_usuario =  $_SESSION['NOMBRE_USUARIO'];
                         </div>
                       </div>
 
-                      <?php }?>
+                      <?php }}?>
 
 
+                    </div>
+                  </div>
+                </div>
 
 
-
-
-
-            </div>
-          </div>
+                
+               </div>
+              
         </div>
       </div>
-    </section>
-    <!--/ End Product Style 1  -->
 
-    <!-- Start Shop Newsletter  -->
-  
-              <!-- End Newsletter Inner -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Shop Newsletter -->
 
-    <!-- Modal -->
-    
-    <!-- Modal end -->
 
-        <!-- Start Shop Services Area -->
-        <section class="shop-services section home">
+    <!-- End Small Banner -->
+
+    <!-- Start Product Area -->
+   
+    <!-- End Product Area -->
+
+    <!-- Start Midium Banner  -->
+
+    <!-- End Midium Banner -->
+
+    <!-- Start Most Popular -->
+
+    <!-- End Most Popular Area -->
+
+    <!-- Start Shop Home List  -->
+
+    <!-- End Shop Home List  -->
+
+    <!-- Start Cowndown Area -->
+
+    <!-- /End Cowndown Area -->
+
+    <!-- Start Shop Blog  -->
+
+    <!-- End Shop Blog  -->
+
+    <!-- Start Shop Services Area -->
+    <section class="shop-services section home">
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-md-6 col-12">
@@ -381,6 +373,14 @@ $nombre_usuario =  $_SESSION['NOMBRE_USUARIO'];
       </div>
     </section>
     <!-- End Shop Services Area -->
+
+    <!-- Start Shop Newsletter  -->
+
+    <!-- End Shop Newsletter -->
+
+    <!-- Modal -->
+
+    <!-- Modal end -->
 
     <!-- Start Footer Area -->
     <footer class="footer">
@@ -508,16 +508,12 @@ $nombre_usuario =  $_SESSION['NOMBRE_USUARIO'];
     <script src="static/static_template/js/owl-carousel.js"></script>
     <!-- Magnific Popup JS -->
     <script src="static/static_template/js/magnific-popup.js"></script>
-    <!-- Fancybox JS -->
-    <script src="static/static_template/js/facnybox.min.js"></script>
     <!-- Waypoints JS -->
     <script src="static/static_template/js/waypoints.min.js"></script>
     <!-- Countdown JS -->
     <script src="static/static_template/js/finalcountdown.min.js"></script>
     <!-- Nice Select JS -->
     <script src="static/static_template/js/nicesellect.js"></script>
-    <!-- Ytplayer JS -->
-    <script src="static/static_template/js/ytplayer.min.js"></script>
     <!-- Flex Slider JS -->
     <script src="static/static_template/js/flex-slider.js"></script>
     <!-- ScrollUp JS -->

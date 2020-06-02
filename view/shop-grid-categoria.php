@@ -11,6 +11,7 @@ if (!isset($_SESSION['ID_USUARIO'])) {
 }
 
 $nombre_usuario =  $_SESSION['NOMBRE_USUARIO'];
+$id_cat = $_GET['id_cat'];
 
 ?>
 <!DOCTYPE html>
@@ -200,7 +201,7 @@ $nombre_usuario =  $_SESSION['NOMBRE_USUARIO'];
                     <div class="navbar-collapse">
                       <div class="nav-inner">
                         <ul class="nav main-menu menu navbar-nav">
-                          <li class="active"><a href="#">Inicio</a></li>
+                          <li class="active"><a href="shop-grid.php">Inicio</a></li>
                           <li><a href="#">Productos <span class="new">New</span> </a></li>
 
                           <li><a href="#">Servicios</a></li>
@@ -273,6 +274,8 @@ $nombre_usuario =  $_SESSION['NOMBRE_USUARIO'];
             <?php
                     for ($j = 0; $j < sizeof($productos_activos); $j++) {
                         $producto = $productos_activos[$j];
+
+                        if ($producto->getId_categoria() == $id_cat) {
                         
                             ?>
                       <div class="col-xl-3 col-lg-4 col-md-4 col-12">
@@ -308,7 +311,7 @@ $nombre_usuario =  $_SESSION['NOMBRE_USUARIO'];
                         </div>
                       </div>
 
-                      <?php }?>
+                      <?php }  }?>
 
 
 

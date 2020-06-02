@@ -3,6 +3,8 @@ require_once __DIR__ . "/../controller/ACTIONS/act_travelproduc.php";
 
 session_start();
 
+
+
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -92,7 +94,6 @@ session_start();
               <!-- Top Left -->
               <div class="top-left">
                 <ul class="list-main">
-                  <li><i class="ti-email"></i>Eshop</li>
                   <li><i class="ti-headphone-alt"></i> +99 (999) 999-9999</li>
                   <li><i class="ti-email"></i> support@eshop.com</li>
                 </ul>
@@ -151,13 +152,6 @@ session_start();
             <div class="col-lg-8 col-md-7 col-12">
               <div class="search-bar-top">
                 <div class="search-bar">
-                  <select>
-                    <option selected="selected">Categorias</option>
-                    <option>Hombre</option>
-                    <option>Mujer</option>
-                    <option>Niños</option>
-                    <option>Niñas</option>
-                  </select>
                   <form>
                     <input
                       name="search"
@@ -185,10 +179,10 @@ session_start();
                   </h3>
                   <ul class="main-category">
 
-                    <li><a href="#">Hombre</a></li>
-                    <li><a href="#">Mujer</a></li>
-                    <li><a href="#">Niños</a></li>
-                    <li><a href="#">Niñas</a></li>
+                    <li><a href="index-cat.php?id_cat=2">Hombre</a></li>
+                    <li><a href="index-cat.php?id_cat=1">Mujer</a></li>
+                    <li><a href="index-cat.php?id_cat=4">Niños</a></li>
+                    <li><a href="index-cat.php?id_cat=3">Niñas</a></li>
 
                   </ul>
                 </div>
@@ -200,7 +194,7 @@ session_start();
                     <div class="navbar-collapse">
                       <div class="nav-inner">
                         <ul class="nav main-menu menu navbar-nav">
-                          <li class="active"><a href="#">Inicio</a></li>
+                          <li class="active"><a href="index.php">Inicio</a></li>
                           <li><a href="#">Productos <span class="new">New</span> </a></li>
 
                           <li><a href="#">Servicios</a></li>
@@ -241,7 +235,12 @@ session_start();
           </div>
         </div>
       </div>
+
+
       <!--/ End Single Slider -->
+      
+
+
 
     <!-- End Small Banner -->
 
@@ -309,10 +308,12 @@ session_start();
                   <div class="tab-single">
                     <div class="row">
                     <?php
-for ($j = 0; $j < sizeof($productos_activos); $j++) {
-    $producto = $productos_activos[$j];
-    if ($producto->getId_categoria() == 2) {
-        ?>
+                    $aux2=0;
+                    for ($j = 0; $j < sizeof($productos_activos); $j++) {
+                        $producto = $productos_activos[$j];
+                        if ($producto->getId_categoria() == 2 && $aux2<4) {
+                          $aux2++;
+                            ?>
                       <div class="col-xl-3 col-lg-4 col-md-4 col-12">
                         <div class="single-product">
                           <div class="product-img">
@@ -361,11 +362,13 @@ for ($j = 0; $j < sizeof($productos_activos); $j++) {
                   <div class="tab-single">
                     <div class="row">
                     <?php
-for ($j = 0; $j < sizeof($productos_activos); $j++) {
-    $producto = $productos_activos[$j];
-    if ($producto->getId_categoria() == 1) {
+                    $aux1=0;
+                    for ($j = 0; $j < sizeof($productos_activos); $j++) {
+                        $producto = $productos_activos[$j];
+                        if ($producto->getId_categoria() == 1 && $aux1<4) {
+                          $aux1++;
 
-        ?>
+                            ?>
                       <div class="col-xl-3 col-lg-4 col-md-4 col-12">
                         <div class="single-product">
                           <div class="product-img">
@@ -414,11 +417,13 @@ for ($j = 0; $j < sizeof($productos_activos); $j++) {
                   <div class="tab-single">
                     <div class="row">
                     <?php
-for ($j = 0; $j < sizeof($productos_activos); $j++) {
-    $producto = $productos_activos[$j];
-    if ($producto->getId_categoria() == 4) {
+                    $aux4=0;
+                    for ($j = 0; $j < sizeof($productos_activos); $j++) {
+                        $producto = $productos_activos[$j];
+                        if ($producto->getId_categoria() == 4 && $aux4<4) {
+                          $aux4++;
 
-        ?>
+                            ?>
                       <div class="col-xl-3 col-lg-4 col-md-4 col-12">
                         <div class="single-product">
                           <div class="product-img">
@@ -464,11 +469,13 @@ for ($j = 0; $j < sizeof($productos_activos); $j++) {
                   <div class="tab-single">
                     <div class="row">
                     <?php
-for ($j = 0; $j < sizeof($productos_activos); $j++) {
-    $producto = $productos_activos[$j];
-    if ($producto->getId_categoria() == 3) {
+                    $aux3=0;
+                    for ($j = 0; $j < sizeof($productos_activos); $j++) {
+                        $producto = $productos_activos[$j];
+                        if ($producto->getId_categoria() == 3 && $aux3<4) {
+                          $aux3++;
 
-        ?>
+                            ?>
                       <div class="col-xl-3 col-lg-4 col-md-4 col-12">
                         <div class="single-product">
                           <div class="product-img">
