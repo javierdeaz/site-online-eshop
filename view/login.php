@@ -33,6 +33,16 @@ if (!empty($_SESSION['errMsg'])) {
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="static/css/login.css" />
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    setTimeout(function() {
+        $("#ocultar").fadeOut(1500);
+    },2000);
+});
+</script>
+
   </head>
   <body>
     <main>
@@ -81,7 +91,7 @@ if (!empty($_SESSION['errMsg'])) {
 
               <!-- ZONA DE MENSAJE -->
               <?php if (!empty($errMsg)): ?>
-                <div class="alert alert-danger" role="alert">
+                <div class="alert alert-danger" role="alert" id="ocultar">
                   <strong><?=$errMsg?></strong>
                 </div>
               <?php

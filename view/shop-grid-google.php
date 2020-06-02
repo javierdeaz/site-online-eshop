@@ -2,8 +2,8 @@
 session_start();
 
 if (!isset($_SESSION['access_token'])) {
-  header('Location: login.php');
-  exit();
+    header('Location: login.php');
+    exit();
 }
 
 ?>
@@ -74,6 +74,11 @@ if (!isset($_SESSION['access_token'])) {
     <link rel="stylesheet" href="static/static_template/css/reset.css" />
     <link rel="stylesheet" href="static/static_template/css/style.css" />
     <link rel="stylesheet" href="static/static_template/css/responsive.css" />
+
+    <!-- Función para cerrar sesión automáticamente -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/auto_logout_google.js"></script>
+
   </head>
   <body class="js">
     <!-- Preloader -->
@@ -184,7 +189,7 @@ if (!isset($_SESSION['access_token'])) {
                   <a href="#" class="single-icon"
                     ><i class="fa fa-heart-o" aria-hidden="true"></i
                   ></a>
-                </div>                
+                </div>
                 <!-- Zona de icono de foto de perfil -->
                 <div class="sinlge-bar">
                   <a href="#" class="single-icon"
