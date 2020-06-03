@@ -2,7 +2,6 @@
 require_once __DIR__ . "/../controller/ACTIONS/act_travelproduc.php";
 
 session_start();
-$id_cat = $_GET['id_cat'];
 
 
 
@@ -173,22 +172,7 @@ $id_cat = $_GET['id_cat'];
         <div class="container">
           <div class="cat-nav-head">
             <div class="row">
-              <div class="col-lg-3">
-                <div class="all-category">
-                  <h3 class="cat-heading">
-                    <i class="fa fa-bars" aria-hidden="true"></i>CATEGORIAS
-                  </h3>
-                  <ul class="main-category">
-
-                    <li><a href="index-cat.php?id_cat=2">Hombre</a></li>
-                    <li><a href="index-cat.php?id_cat=1">Mujer</a></li>
-                    <li><a href="index-cat.php?id_cat=4">Niños</a></li>
-                    <li><a href="index-cat.php?id_cat=3">Niñas</a></li>
-
-                  </ul>
-                </div>
-              </div>
-              <div class="col-lg-9 col-12">
+              <div class="col-12">
                 <div class="menu-area">
                   <!-- Main Menu -->
                   <nav class="navbar navbar-expand-lg">
@@ -216,98 +200,375 @@ $id_cat = $_GET['id_cat'];
     </header>
     <!--/ End Header -->
 
-    <!-- Slider Area -->
-    <section class="hero-slider">
+  
       <!-- Single Slider -->
-      <div class="single-slider">
-        <div class="container">
-          <div class="row no-gutters">
-            <div class="col-lg-9 offset-lg-3 col-12">
-              <div class="text-inner">
-                <div class="row">
-                  <div class="col-lg-7 col-12">
-                    <div class="hero-text">
-                      <h1><span>Super Tienda Online </span>Prendas de gran calidad</h1>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      
 
 
       <!--/ End Single Slider -->
-      <div class="product-area section">
-        <div class="container">
-          
-               <div class="tab-content" id="myTabContent">
-
-
-
-               <div class="tab-pane fade show active" id="man" role="tabpanel">
-                  <div class="tab-single">
-                    <div class="row">
-                    <?php
-                    for ($j = 0; $j < sizeof($productos_activos); $j++) {
-                        $producto = $productos_activos[$j];
-                        if ($producto->getId_categoria() == $id_cat) {
-                            ?>
-                      <div class="col-xl-3 col-lg-4 col-md-4 col-12">
-                        <div class="single-product">
-                          <div class="product-img">
-                            <a href="product-details.html">
-                              <img
-                                class="default-img"
-                                src="img/<?php echo $producto->getImagen(); ?>.jpg"
-                                alt="imagen no enontrada"
-                              />
-                              <img
-                                class="hover-img"
-                                src="img/<?php echo $producto->getImagen(); ?>.jpg"
-                                alt="imagen no enontrada"
-                              />
-                            </a>
-
-                          </div>
-                          <div class="product-content">
-
-                            <h3>
-                            <?php echo $producto->getNombre_producto(); ?>
-                            </h3>
-
-                            <div class="product-price">
-                              <span><?php echo $producto->getDescription(); ?></span>
-                            </div>
-                            <div class="product-price">
-                              <span>$<?php echo $producto->getPrecio(); ?>.00</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <?php }}?>
-
-
-                    </div>
-                  </div>
-                </div>
-
-
-                
-               </div>
-              
-        </div>
-      </div>
+      
 
 
 
     <!-- End Small Banner -->
 
     <!-- Start Product Area -->
-   
+    <div class="product-area section">
+      <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2>Hombre</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="product-info">
+                
+              
+                         <!-- Start Single Tab -->
+
+
+                
+                    <div class="tab-single">
+                        <div class="row">
+                        <?php
+                        $aux2=0;
+                        for ($j = 0; $j < sizeof($productos_activos); $j++) {
+                            $producto = $productos_activos[$j];
+                            if ($producto->getId_categoria() == 2 ) {
+                            
+                                ?>
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-12">
+                            <div class="single-product">
+                                    <div class="product-img">
+                                        <a href="product-details.html">
+                                        <img
+                                            class="default-img"
+                                            src="img/<?php echo $producto->getImagen(); ?>.jpg"
+                                            alt="imagen no enontrada"
+                                        />
+                                        <img
+                                            class="hover-img"
+                                            src="img/<?php echo $producto->getImagen(); ?>.jpg"
+                                            alt="imagen no enontrada"
+                                        />
+                                        </a>
+
+                                    </div>
+                                     <div class="product-content">
+
+                                        <h3>
+                                        <?php echo $producto->getNombre_producto(); ?>
+                                        </h3>
+
+                                        <div class="product-price">
+                                        <span><?php echo $producto->getDescription(); ?></span>
+                                        </div>
+                                        <div class="product-price">
+                                        <span>$<?php echo $producto->getPrecio(); ?>.00</span>
+                                        </div>
+                                     </div>
+                            </div>
+                        </div>
+
+                        <?php }}?>
+
+
+                        </div>
+                    </div>
+                    
+                <!--/ End Single Tab -->
+
+                <!--********************************************************************************** -->
+
+                
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- End Product Area -->
+
+
+
+
+
+
+
+
+    <!-- Start Product Area -->
+    <div class="product-area section">
+      <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2>Mujer</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="product-info">
+                
+              
+                         <!-- Start Single Tab -->
+
+
+                
+                    <div class="tab-single">
+                        <div class="row">
+                        <?php
+                        $aux2=0;
+                        for ($j = 0; $j < sizeof($productos_activos); $j++) {
+                            $producto = $productos_activos[$j];
+                            if ($producto->getId_categoria() == 1 ) {
+                            
+                                ?>
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-12">
+                            <div class="single-product">
+                                    <div class="product-img">
+                                        <a href="product-details.html">
+                                        <img
+                                            class="default-img"
+                                            src="img/<?php echo $producto->getImagen(); ?>.jpg"
+                                            alt="imagen no enontrada"
+                                        />
+                                        <img
+                                            class="hover-img"
+                                            src="img/<?php echo $producto->getImagen(); ?>.jpg"
+                                            alt="imagen no enontrada"
+                                        />
+                                        </a>
+
+                                    </div>
+                                     <div class="product-content">
+
+                                        <h3>
+                                        <?php echo $producto->getNombre_producto(); ?>
+                                        </h3>
+
+                                        <div class="product-price">
+                                        <span><?php echo $producto->getDescription(); ?></span>
+                                        </div>
+                                        <div class="product-price">
+                                        <span>$<?php echo $producto->getPrecio(); ?>.00</span>
+                                        </div>
+                                     </div>
+                            </div>
+                        </div>
+
+                        <?php }}?>
+
+
+                        </div>
+                    </div>
+                    
+                <!--/ End Single Tab -->
+
+                <!--********************************************************************************** -->
+
+                
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Product Area -->
+
+
+
+
+
+
+        <!-- Start Product Area -->
+        <div class="product-area section">
+      <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2>Niños</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="product-info">
+                
+              
+                         <!-- Start Single Tab -->
+
+
+                
+                    <div class="tab-single">
+                        <div class="row">
+                        <?php
+                        $aux2=0;
+                        for ($j = 0; $j < sizeof($productos_activos); $j++) {
+                            $producto = $productos_activos[$j];
+                            if ($producto->getId_categoria() == 4 ) {
+                            
+                                ?>
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-12">
+                            <div class="single-product">
+                                    <div class="product-img">
+                                        <a href="product-details.html">
+                                        <img
+                                            class="default-img"
+                                            src="img/<?php echo $producto->getImagen(); ?>.jpg"
+                                            alt="imagen no enontrada"
+                                        />
+                                        <img
+                                            class="hover-img"
+                                            src="img/<?php echo $producto->getImagen(); ?>.jpg"
+                                            alt="imagen no enontrada"
+                                        />
+                                        </a>
+
+                                    </div>
+                                     <div class="product-content">
+
+                                        <h3>
+                                        <?php echo $producto->getNombre_producto(); ?>
+                                        </h3>
+
+                                        <div class="product-price">
+                                        <span><?php echo $producto->getDescription(); ?></span>
+                                        </div>
+                                        <div class="product-price">
+                                        <span>$<?php echo $producto->getPrecio(); ?>.00</span>
+                                        </div>
+                                     </div>
+                            </div>
+                        </div>
+
+                        <?php }}?>
+
+
+                        </div>
+                    </div>
+                    
+                <!--/ End Single Tab -->
+
+                <!--********************************************************************************** -->
+
+                
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Product Area -->
+
+
+
+
+
+
+
+
+
+        <!-- Start Product Area -->
+        <div class="product-area section">
+      <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2>Niñas</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="product-info">
+                
+              
+                         <!-- Start Single Tab -->
+
+
+                
+                    <div class="tab-single">
+                        <div class="row">
+                        <?php
+                        $aux2=0;
+                        for ($j = 0; $j < sizeof($productos_activos); $j++) {
+                            $producto = $productos_activos[$j];
+                            if ($producto->getId_categoria() == 3 ) {
+                            
+                                ?>
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-12">
+                            <div class="single-product">
+                                    <div class="product-img">
+                                        <a href="product-details.html">
+                                        <img
+                                            class="default-img"
+                                            src="img/<?php echo $producto->getImagen(); ?>.jpg"
+                                            alt="imagen no enontrada"
+                                        />
+                                        <img
+                                            class="hover-img"
+                                            src="img/<?php echo $producto->getImagen(); ?>.jpg"
+                                            alt="imagen no enontrada"
+                                        />
+                                        </a>
+
+                                    </div>
+                                     <div class="product-content">
+
+                                        <h3>
+                                        <?php echo $producto->getNombre_producto(); ?>
+                                        </h3>
+
+                                        <div class="product-price">
+                                        <span><?php echo $producto->getDescription(); ?></span>
+                                        </div>
+                                        <div class="product-price">
+                                        <span>$<?php echo $producto->getPrecio(); ?>.00</span>
+                                        </div>
+                                     </div>
+                            </div>
+                        </div>
+
+                        <?php }}?>
+
+
+                        </div>
+                    </div>
+                    
+                <!--/ End Single Tab -->
+
+                <!--********************************************************************************** -->
+
+                
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Product Area -->
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+   
 
     <!-- Start Midium Banner  -->
 

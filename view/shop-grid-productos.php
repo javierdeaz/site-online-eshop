@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 require_once __DIR__ . "/../controller/MDB/mdbUsuario.php";
@@ -11,6 +12,11 @@ if (!isset($_SESSION['ID_USUARIO'])) {
 }
 
 $nombre_usuario = $_SESSION['NOMBRE_USUARIO'];
+
+
+
+
+
 
 ?>
 <!DOCTYPE html>
@@ -26,7 +32,7 @@ $nombre_usuario = $_SESSION['NOMBRE_USUARIO'];
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <!-- Title Tag  -->
-    <title>Eshop - Bienvenido</title>
+    <title>Eshop - Inicio</title>
     <!-- Favicon -->
     <link
       rel="icon"
@@ -60,8 +66,6 @@ $nombre_usuario = $_SESSION['NOMBRE_USUARIO'];
       rel="stylesheet"
       href="static/static_template/css/themify-icons.css"
     />
-    <!-- Jquery Ui -->
-    <link rel="stylesheet" href="static/static_template/css/jquery-ui.css" />
     <!-- Nice Select CSS -->
     <link rel="stylesheet" href="static/static_template/css/niceselect.css" />
     <!-- Animate CSS -->
@@ -80,11 +84,6 @@ $nombre_usuario = $_SESSION['NOMBRE_USUARIO'];
     <link rel="stylesheet" href="static/static_template/css/reset.css" />
     <link rel="stylesheet" href="static/static_template/css/style.css" />
     <link rel="stylesheet" href="static/static_template/css/responsive.css" />
-
-    <!-- Función para cerrar sesión automáticamente -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/auto_logout.js"></script>
-
   </head>
   <body class="js">
     <!-- Preloader -->
@@ -108,7 +107,7 @@ $nombre_usuario = $_SESSION['NOMBRE_USUARIO'];
               <!-- Top Left -->
               <div class="top-left">
                 <ul class="list-main">
-                  <li><i class="ti-headphone-alt"></i> +57 (300) 454-9596</li>
+                  <li><i class="ti-headphone-alt"></i> +99 (999) 999-9999</li>
                   <li><i class="ti-email"></i> support@eshop.com</li>
                 </ul>
               </div>
@@ -119,8 +118,8 @@ $nombre_usuario = $_SESSION['NOMBRE_USUARIO'];
               <div class="right-content">
                 <ul class="list-main">
 
-                  <li><i class="ti-user"></i> <a href="#"><?php echo ($nombre_usuario); ?></a></li>
-                  <li>
+                <li><i class="ti-user"></i> <a href="#"><?php echo ($nombre_usuario); ?></a></li>
+                <li>
                     <i class="ti-power-off"></i><a href="../controller/ACTIONS/act_logout.php">Cerrar sesión</a>
                   </li>
                 </ul>
@@ -168,11 +167,10 @@ $nombre_usuario = $_SESSION['NOMBRE_USUARIO'];
             <div class="col-lg-8 col-md-7 col-12">
               <div class="search-bar-top">
                 <div class="search-bar">
-
                   <form>
                     <input
                       name="search"
-                      placeholder="Busca tu producto..."
+                      placeholder="Buscar Producto....."
                       type="search"
                     />
                     <button class="btnn"><i class="ti-search"></i></button>
@@ -180,15 +178,6 @@ $nombre_usuario = $_SESSION['NOMBRE_USUARIO'];
                 </div>
               </div>
             </div>
-            <div class="col-lg-2 col-md-3 col-12">
-              <div class="right-bar">
-                <!-- Search Form -->
-
-                  <!-- Shopping Item -->
-
-                  <!--/ End Shopping Item -->
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -226,124 +215,398 @@ $nombre_usuario = $_SESSION['NOMBRE_USUARIO'];
     </header>
     <!--/ End Header -->
 
-    <!-- Breadcrumbs -->
+  
+      <!-- Single Slider -->
+      
 
-    <!-- End Breadcrumbs -->
 
-    <!-- Product Style -->
-    <section class="product-area shop-sidebar shop section">
+      <!--/ End Single Slider -->
+      
+
+
+
+    <!-- End Small Banner -->
+
+    <!-- Start Product Area -->
+    <div class="product-area section">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-4 col-12">
-            <div class="shop-sidebar">
-              <!-- Single Widget -->
-              <div class="single-widget category">
-                <h3 class="title">Categorias</h3>
-                <ul class="categor-list">
-                  <li><a href="shop-grid-categoria.php?id_cat=2">Hombre</a></li>
-                  <li><a href="shop-grid-categoria.php?id_cat=1">Mujer</a></li>
-                  <li><a href="shop-grid-categoria.php?id_cat=4">Niños</a></li>
-                  <li><a href="shop-grid-categoria.php?id_cat=3">Niñas</a></li>
-                </ul>
-              </div>
-              <!--/ End Single Widget -->
-              <!-- Shop By Price -->
-
-              <!--/ End Shop By Price -->
-              <!-- Single Widget -->
-
-              <!--/ End Single Widget -->
-              <!-- Single Widget -->
-
-              <!--/ End Single Widget -->
-            </div>
-          </div>
-          <div class="col-lg-9 col-md-8 col-12">
             <div class="row">
-              <div class="col-12">
-                <!-- Shop Top -->
-
-                <!--/ End Shop Top -->
-              </div>
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2>Hombre</h2>
+                    </div>
+                </div>
             </div>
             <div class="row">
+                <div class="col-12">
+                    <div class="product-info">
+                
+              
+                         <!-- Start Single Tab -->
 
 
+                
+                    <div class="tab-single">
+                        <div class="row">
+                        <?php
+                        $aux2=0;
+                        for ($j = 0; $j < sizeof($productos_activos); $j++) {
+                            $producto = $productos_activos[$j];
+                            if ($producto->getId_categoria() == 2 ) {
+                            
+                                ?>
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-12">
+                            <div class="single-product">
+                                    <div class="product-img">
+                                        <a href="product-details.html">
+                                        <img
+                                            class="default-img"
+                                            src="img/<?php echo $producto->getImagen(); ?>.jpg"
+                                            alt="imagen no enontrada"
+                                        />
+                                        <img
+                                            class="hover-img"
+                                            src="img/<?php echo $producto->getImagen(); ?>.jpg"
+                                            alt="imagen no enontrada"
+                                        />
+                                        </a>
 
+                                    </div>
+                                     <div class="product-content">
 
+                                        <h3>
+                                        <?php echo $producto->getNombre_producto(); ?>
+                                        </h3>
 
-
-
-
-            <?php
-for ($j = 0; $j < sizeof($productos_activos); $j++) {
-    $producto = $productos_activos[$j];
-
-    ?>
-                      <div class="col-xl-3 col-lg-4 col-md-4 col-12">
-                        <div class="single-product">
-                          <div class="product-img">
-                            <a href="product-details.html">
-                              <img
-                                class="default-img"
-                                src="img/<?php echo $producto->getImagen(); ?>.jpg"
-                                alt="imagen no enontrada"
-                              />
-                              <img
-                                class="hover-img"
-                                src="img/<?php echo $producto->getImagen(); ?>.jpg"
-                                alt="imagen no enontrada"
-                              />
-                            </a>
-
-                          </div>
-                          <div class="product-content">
-
-                            <h4>
-                            <?php echo $producto->getNombre_producto(); ?>
-                            </h4>
-
-                            <div class="product-price">
-                              <span><?php echo $producto->getDescription(); ?></span>
+                                        <div class="product-price">
+                                        <span><?php echo $producto->getDescription(); ?></span>
+                                        </div>
+                                        <div class="product-price">
+                                        <span>$<?php echo $producto->getPrecio(); ?>.00</span>
+                                        </div>
+                                     </div>
                             </div>
-                            <div class="product-price">
-                              <span>$<?php echo $producto->getPrecio(); ?>.00</span>
-                            </div>
-                          </div>
                         </div>
-                      </div>
 
-                      <?php }?>
-
+                        <?php }}?>
 
 
+                        </div>
+                    </div>
+                    
+                <!--/ End Single Tab -->
 
+                <!--********************************************************************************** -->
 
-
-
+                
+              
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <!--/ End Product Style 1  -->
+    </div>
+    <!-- End Product Area -->
 
-    <!-- Start Shop Newsletter  -->
 
-              <!-- End Newsletter Inner -->
+
+
+
+
+
+
+    <!-- Start Product Area -->
+    <div class="product-area section">
+      <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2>Mujer</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="product-info">
+                
+              
+                         <!-- Start Single Tab -->
+
+
+                
+                    <div class="tab-single">
+                        <div class="row">
+                        <?php
+                        $aux2=0;
+                        for ($j = 0; $j < sizeof($productos_activos); $j++) {
+                            $producto = $productos_activos[$j];
+                            if ($producto->getId_categoria() == 1 ) {
+                            
+                                ?>
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-12">
+                            <div class="single-product">
+                                    <div class="product-img">
+                                        <a href="product-details.html">
+                                        <img
+                                            class="default-img"
+                                            src="img/<?php echo $producto->getImagen(); ?>.jpg"
+                                            alt="imagen no enontrada"
+                                        />
+                                        <img
+                                            class="hover-img"
+                                            src="img/<?php echo $producto->getImagen(); ?>.jpg"
+                                            alt="imagen no enontrada"
+                                        />
+                                        </a>
+
+                                    </div>
+                                     <div class="product-content">
+
+                                        <h3>
+                                        <?php echo $producto->getNombre_producto(); ?>
+                                        </h3>
+
+                                        <div class="product-price">
+                                        <span><?php echo $producto->getDescription(); ?></span>
+                                        </div>
+                                        <div class="product-price">
+                                        <span>$<?php echo $producto->getPrecio(); ?>.00</span>
+                                        </div>
+                                     </div>
+                            </div>
+                        </div>
+
+                        <?php }}?>
+
+
+                        </div>
+                    </div>
+                    
+                <!--/ End Single Tab -->
+
+                <!--********************************************************************************** -->
+
+                
+              
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <!-- End Shop Newsletter -->
+    </div>
+    <!-- End Product Area -->
 
-    <!-- Modal -->
 
-    <!-- Modal end -->
 
-        <!-- Start Shop Services Area -->
-        <section class="shop-services section home">
+
+
+
+        <!-- Start Product Area -->
+        <div class="product-area section">
+      <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2>Niños</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="product-info">
+                
+              
+                         <!-- Start Single Tab -->
+
+
+                
+                    <div class="tab-single">
+                        <div class="row">
+                        <?php
+                        $aux2=0;
+                        for ($j = 0; $j < sizeof($productos_activos); $j++) {
+                            $producto = $productos_activos[$j];
+                            if ($producto->getId_categoria() == 4 ) {
+                            
+                                ?>
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-12">
+                            <div class="single-product">
+                                    <div class="product-img">
+                                        <a href="product-details.html">
+                                        <img
+                                            class="default-img"
+                                            src="img/<?php echo $producto->getImagen(); ?>.jpg"
+                                            alt="imagen no enontrada"
+                                        />
+                                        <img
+                                            class="hover-img"
+                                            src="img/<?php echo $producto->getImagen(); ?>.jpg"
+                                            alt="imagen no enontrada"
+                                        />
+                                        </a>
+
+                                    </div>
+                                     <div class="product-content">
+
+                                        <h3>
+                                        <?php echo $producto->getNombre_producto(); ?>
+                                        </h3>
+
+                                        <div class="product-price">
+                                        <span><?php echo $producto->getDescription(); ?></span>
+                                        </div>
+                                        <div class="product-price">
+                                        <span>$<?php echo $producto->getPrecio(); ?>.00</span>
+                                        </div>
+                                     </div>
+                            </div>
+                        </div>
+
+                        <?php }}?>
+
+
+                        </div>
+                    </div>
+                    
+                <!--/ End Single Tab -->
+
+                <!--********************************************************************************** -->
+
+                
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Product Area -->
+
+
+
+
+
+
+
+
+
+        <!-- Start Product Area -->
+        <div class="product-area section">
+      <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2>Niñas</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="product-info">
+                
+              
+                         <!-- Start Single Tab -->
+
+
+                
+                    <div class="tab-single">
+                        <div class="row">
+                        <?php
+                        $aux2=0;
+                        for ($j = 0; $j < sizeof($productos_activos); $j++) {
+                            $producto = $productos_activos[$j];
+                            if ($producto->getId_categoria() == 3 ) {
+                            
+                                ?>
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-12">
+                            <div class="single-product">
+                                    <div class="product-img">
+                                        <a href="product-details.html">
+                                        <img
+                                            class="default-img"
+                                            src="img/<?php echo $producto->getImagen(); ?>.jpg"
+                                            alt="imagen no enontrada"
+                                        />
+                                        <img
+                                            class="hover-img"
+                                            src="img/<?php echo $producto->getImagen(); ?>.jpg"
+                                            alt="imagen no enontrada"
+                                        />
+                                        </a>
+
+                                    </div>
+                                     <div class="product-content">
+
+                                        <h3>
+                                        <?php echo $producto->getNombre_producto(); ?>
+                                        </h3>
+
+                                        <div class="product-price">
+                                        <span><?php echo $producto->getDescription(); ?></span>
+                                        </div>
+                                        <div class="product-price">
+                                        <span>$<?php echo $producto->getPrecio(); ?>.00</span>
+                                        </div>
+                                     </div>
+                            </div>
+                        </div>
+
+                        <?php }}?>
+
+
+                        </div>
+                    </div>
+                    
+                <!--/ End Single Tab -->
+
+                <!--********************************************************************************** -->
+
+                
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Product Area -->
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+   
+
+    <!-- Start Midium Banner  -->
+
+    <!-- End Midium Banner -->
+
+    <!-- Start Most Popular -->
+
+    <!-- End Most Popular Area -->
+
+    <!-- Start Shop Home List  -->
+
+    <!-- End Shop Home List  -->
+
+    <!-- Start Cowndown Area -->
+
+    <!-- /End Cowndown Area -->
+
+    <!-- Start Shop Blog  -->
+
+    <!-- End Shop Blog  -->
+
+    <!-- Start Shop Services Area -->
+    <section class="shop-services section home">
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-md-6 col-12">
@@ -386,6 +649,14 @@ for ($j = 0; $j < sizeof($productos_activos); $j++) {
       </div>
     </section>
     <!-- End Shop Services Area -->
+
+    <!-- Start Shop Newsletter  -->
+
+    <!-- End Shop Newsletter -->
+
+    <!-- Modal -->
+
+    <!-- Modal end -->
 
     <!-- Start Footer Area -->
     <footer class="footer">
@@ -513,16 +784,12 @@ for ($j = 0; $j < sizeof($productos_activos); $j++) {
     <script src="static/static_template/js/owl-carousel.js"></script>
     <!-- Magnific Popup JS -->
     <script src="static/static_template/js/magnific-popup.js"></script>
-    <!-- Fancybox JS -->
-    <script src="static/static_template/js/facnybox.min.js"></script>
     <!-- Waypoints JS -->
     <script src="static/static_template/js/waypoints.min.js"></script>
     <!-- Countdown JS -->
     <script src="static/static_template/js/finalcountdown.min.js"></script>
     <!-- Nice Select JS -->
     <script src="static/static_template/js/nicesellect.js"></script>
-    <!-- Ytplayer JS -->
-    <script src="static/static_template/js/ytplayer.min.js"></script>
     <!-- Flex Slider JS -->
     <script src="static/static_template/js/flex-slider.js"></script>
     <!-- ScrollUp JS -->
