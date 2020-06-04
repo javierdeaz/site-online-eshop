@@ -3,8 +3,6 @@ require_once __DIR__ . "/../controller/ACTIONS/act_travelproduc.php";
 
 session_start();
 
-
-
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -238,7 +236,60 @@ session_start();
 
 
       <!--/ End Single Slider -->
-      
+
+ <!-- Start Small Banner  -->
+    <section class="small-banner section">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- Single Banner  -->
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="single-banner">
+              <img src="https://via.placeholder.com/600x370" alt="#" />
+              <div class="content">
+                <p>Man's Collectons</p>
+                <h3>
+                  Summer travel <br />
+                  collection
+                </h3>
+                <a href="#">Discover Now</a>
+              </div>
+            </div>
+          </div>
+          <!-- /End Single Banner  -->
+          <!-- Single Banner  -->
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="single-banner">
+              <img src="https://via.placeholder.com/600x370" alt="#" />
+              <div class="content">
+                <p>Bag Collectons</p>
+                <h3>
+                  Awesome Bag <br />
+                  2020
+                </h3>
+                <a href="#">Shop Now</a>
+              </div>
+            </div>
+          </div>
+          <!-- /End Single Banner  -->
+          <!-- Single Banner  -->
+          <div class="col-lg-4 col-12">
+            <div class="single-banner tab-height">
+              <img src="https://via.placeholder.com/600x370" alt="#" />
+              <div class="content">
+                <p>Flash Sale</p>
+                <h3>
+                  Mid Season <br />
+                  Up to <span>40%</span> Off
+                </h3>
+                <a href="#">Discover Now</a>
+              </div>
+            </div>
+          </div>
+          <!-- /End Single Banner  -->
+        </div>
+      </div>
+    </section>
+    <!-- End Small Banner -->
 
 
 
@@ -308,12 +359,12 @@ session_start();
                   <div class="tab-single">
                     <div class="row">
                     <?php
-                    $aux2=0;
-                    for ($j = 0; $j < sizeof($productos_activos); $j++) {
-                        $producto = $productos_activos[$j];
-                        if ($producto->getId_categoria() == 2 && $aux2<4) {
-                          $aux2++;
-                            ?>
+$aux2 = 0;
+for ($j = 0; $j < sizeof($productos_activos); $j++) {
+    $producto = $productos_activos[$j];
+    if ($producto->getId_categoria() == 2 && $aux2 < 4) {
+        $aux2++;
+        ?>
                       <div class="col-xl-3 col-lg-4 col-md-4 col-12">
                         <div class="single-product">
                           <div class="product-img">
@@ -362,13 +413,13 @@ session_start();
                   <div class="tab-single">
                     <div class="row">
                     <?php
-                    $aux1=0;
-                    for ($j = 0; $j < sizeof($productos_activos); $j++) {
-                        $producto = $productos_activos[$j];
-                        if ($producto->getId_categoria() == 1 && $aux1<4) {
-                          $aux1++;
+$aux1 = 0;
+for ($j = 0; $j < sizeof($productos_activos); $j++) {
+    $producto = $productos_activos[$j];
+    if ($producto->getId_categoria() == 1 && $aux1 < 4) {
+        $aux1++;
 
-                            ?>
+        ?>
                       <div class="col-xl-3 col-lg-4 col-md-4 col-12">
                         <div class="single-product">
                           <div class="product-img">
@@ -417,13 +468,13 @@ session_start();
                   <div class="tab-single">
                     <div class="row">
                     <?php
-                    $aux4=0;
-                    for ($j = 0; $j < sizeof($productos_activos); $j++) {
-                        $producto = $productos_activos[$j];
-                        if ($producto->getId_categoria() == 4 && $aux4<4) {
-                          $aux4++;
+$aux4 = 0;
+for ($j = 0; $j < sizeof($productos_activos); $j++) {
+    $producto = $productos_activos[$j];
+    if ($producto->getId_categoria() == 4 && $aux4 < 4) {
+        $aux4++;
 
-                            ?>
+        ?>
                       <div class="col-xl-3 col-lg-4 col-md-4 col-12">
                         <div class="single-product">
                           <div class="product-img">
@@ -469,13 +520,13 @@ session_start();
                   <div class="tab-single">
                     <div class="row">
                     <?php
-                    $aux3=0;
-                    for ($j = 0; $j < sizeof($productos_activos); $j++) {
-                        $producto = $productos_activos[$j];
-                        if ($producto->getId_categoria() == 3 && $aux3<4) {
-                          $aux3++;
+$aux3 = 0;
+for ($j = 0; $j < sizeof($productos_activos); $j++) {
+    $producto = $productos_activos[$j];
+    if ($producto->getId_categoria() == 3 && $aux3 < 4) {
+        $aux3++;
 
-                            ?>
+        ?>
                       <div class="col-xl-3 col-lg-4 col-md-4 col-12">
                         <div class="single-product">
                           <div class="product-img">
