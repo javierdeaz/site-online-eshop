@@ -92,8 +92,8 @@ session_start();
               <!-- Top Left -->
               <div class="top-left">
                 <ul class="list-main">
-                  <li><i class="ti-headphone-alt"></i> +99 (999) 999-9999</li>
-                  <li><i class="ti-email"></i> support@eshop.com</li>
+                  <li><i class="ti-headphone-alt"></i> +57 (300) 459-6667</li>
+                  <li><i class="ti-email"></i> eshopdeaz@gmail.com</li>
                 </ul>
               </div>
               <!--/ End Top Left -->
@@ -103,7 +103,7 @@ session_start();
               <div class="right-content">
                 <ul class="list-main">
 
-                  <li> <i class="ti-user"></i> <a href="#">Mi cuenta</a> </li>
+                  <li> <i class="ti-user"></i> <a href="#">Acceder a mi cuenta</a> </li>
                   <li> <i class="ti-power-off"></i><a href="login.php">Login</a> </li>
                 </ul>
               </div>
@@ -193,7 +193,7 @@ session_start();
                       <div class="nav-inner">
                         <ul class="nav main-menu menu navbar-nav">
                           <li class="active"><a href="index.php">Inicio</a></li>
-                          <li><a href="#">Productos <span class="new">New</span> </a></li>
+                          <li><a href="#">Productos <span class="new">Nuevos</span> </a></li>
 
                           <li><a href="#">Servicios</a></li>
 
@@ -224,7 +224,9 @@ session_start();
                 <div class="row">
                   <div class="col-lg-7 col-12">
                     <div class="hero-text">
-                      <h1><span>Super Tienda Online </span>Prendas de gran calidad</h1>
+                      <h1><span>Promociones y descuentos</span>Eshop.<br/>
+                        Super tienda online
+                      </h1>
                     </div>
                   </div>
                 </div>
@@ -244,14 +246,14 @@ session_start();
           <!-- Single Banner  -->
           <div class="col-lg-4 col-md-6 col-12">
             <div class="single-banner">
-              <img src="https://via.placeholder.com/600x370" alt="#" />
+              <img src="static/images/publication/bn-hombres.png" alt="#" />
               <div class="content">
-                <p>Man's Collectons</p>
+                <p>Ultimas colecciones</p>
                 <h3>
-                  Summer travel <br />
-                  collection
+                  Ropa hombres<br />
+                  <span>30%</span> OFF
                 </h3>
-                <a href="#">Discover Now</a>
+                <a href="#">Ver más</a>
               </div>
             </div>
           </div>
@@ -259,14 +261,14 @@ session_start();
           <!-- Single Banner  -->
           <div class="col-lg-4 col-md-6 col-12">
             <div class="single-banner">
-              <img src="https://via.placeholder.com/600x370" alt="#" />
+              <img src="static/images/publication/bn-mujer.jpg" alt="#" />
               <div class="content">
-                <p>Bag Collectons</p>
+                <p>Ultima tendencia</p>
                 <h3>
-                  Awesome Bag <br />
-                  2020
+                  <span>60%</span> OFF<br />
+                  Ropa femenina
                 </h3>
-                <a href="#">Shop Now</a>
+                <a href="#">Ver más</a>
               </div>
             </div>
           </div>
@@ -274,14 +276,15 @@ session_start();
           <!-- Single Banner  -->
           <div class="col-lg-4 col-12">
             <div class="single-banner tab-height">
-              <img src="https://via.placeholder.com/600x370" alt="#" />
+              <img src="static/images/publication/bn-niña.jpg" alt="#" />
               <div class="content">
-                <p>Flash Sale</p>
+                <p>Niños y niñas</p>
                 <h3>
-                  Mid Season <br />
-                  Up to <span>40%</span> Off
+                  Tendencias<br />
+                  Recibe un<br />
+                  <span>50%</span> OFF
                 </h3>
-                <a href="#">Discover Now</a>
+                <a href="#">Ver más</a>
               </div>
             </div>
           </div>
@@ -663,8 +666,10 @@ for ($j = 0; $j < sizeof($productos_activos); $j++) {
 
                 </p>
                 <p class="call">
-                ¿Tienes una pregunta? Llámenos 24/7<span
-                    ><a href="#">+5555 555 555</a></span
+                ¿Tienes una pregunta?<br/>
+                Atendemos su solicitud de compra en horas de atención laboral.<br/><br/>
+                Linea gratuita. Estamos para servirles 24/7 virtualmente
+                <span><a href="#">01 8000 9746 2348</a></span
                   >
                 </p>
               </div>
@@ -675,8 +680,11 @@ for ($j = 0; $j < sizeof($productos_activos); $j++) {
               <div class="single-footer links">
                 <h4>Información</h4>
                 <ul>
-                  <li><a href="#">Sobre nosotras</a></li>
-
+                  <li><a href="#">Sobre nosotros</a></li>
+                  <li><a href="#">Preguntas frecuentes</a></li>
+                   <li><a href="#">Contactos</a></li>
+                    <li><a href="#">Atención</a></li>
+                     <li><a href="#">Nuestro portal</a></li>
                 </ul>
               </div>
               <!-- End Single Widget -->
@@ -702,10 +710,9 @@ for ($j = 0; $j < sizeof($productos_activos); $j++) {
                 <!-- Single Widget -->
                 <div class="contact">
                   <ul>
-                    <li>Santa Marta.</li>
-                    <li>Colombia.</li>
-                    <li>info@eshop.com</li>
-                    <li>+5555 555 555</li>
+                    <li>Santa Marta - Colombia</li>
+                    <li>serviciosyconsultas@eshop.com</li>
+                    <li>+57 (300) 459-6667</li>
                   </ul>
                 </div>
                 <!-- End Single Widget -->
@@ -737,9 +744,7 @@ for ($j = 0; $j < sizeof($productos_activos); $j++) {
               <div class="col-lg-6 col-12">
                 <div class="left">
                   <p>
-                    Copyright © 2020
-
-                    - All Rights Reserved.
+                    Copyright © 2020 - Eshop. - Santa Marta
                   </p>
                 </div>
               </div>
