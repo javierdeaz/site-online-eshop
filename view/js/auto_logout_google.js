@@ -7,11 +7,11 @@ $(function() {
     }
 
     function timeCompare(timeString) {
-        var maxMinutes = 0.5;
+        var maxMinutes = 6;
         var currentTime = new Date();
         var pastTime = new Date(timeString);
         var timeDiff = currentTime - pastTime;
-        var minPast = Math.floor((timeDiff / 30000));
+        var minPast = Math.floor((timeDiff / 360000));
         if (minPast > maxMinutes) {
             sessionStorage.removeItem("lastTimeStamp");
             window.location = "../controller/ACTIONS/act_logout_google.php";

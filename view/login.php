@@ -98,7 +98,7 @@ $(document).ready(function() {
 $_SESSION['errMsg'] = '';
 endif;?>
 
-              <a href="reset_password/reset_pass.php" class="forgot-password-link"
+              <a href="reset_password/email_password.php" class="forgot-password-link"
                 >¿Quieres recuperar tu contraseña?</a
               >
               <div class="flex">
