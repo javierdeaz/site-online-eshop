@@ -5,12 +5,13 @@ require_once __DIR__ . "/../controller/MDB/mdbUsuario.php";
 
 require_once __DIR__ . "/../controller/ACTIONS/act_travelproduc.php";
 
-if (!isset($_SESSION['ID_USUARIO'])) {
-    header("Location: /");
-    exit();
+if (!isset($_SESSION['access_token'])) {
+  header('Location: login.php');
+  exit();
 }
 
-$nombre_usuario = $_SESSION['NOMBRE_USUARIO'];
+
+$id_cat = $_GET['id_cat'];
 
 ?>
 <!DOCTYPE html>
@@ -80,11 +81,6 @@ $nombre_usuario = $_SESSION['NOMBRE_USUARIO'];
     <link rel="stylesheet" href="static/static_template/css/reset.css" />
     <link rel="stylesheet" href="static/static_template/css/style.css" />
     <link rel="stylesheet" href="static/static_template/css/responsive.css" />
-
-    <!-- Función para cerrar sesión automáticamente -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/auto_logout.js"></script>
-
   </head>
   <body class="js">
     <!-- Preloader -->
@@ -118,10 +114,10 @@ $nombre_usuario = $_SESSION['NOMBRE_USUARIO'];
               <!-- Top Right -->
               <div class="right-content">
                 <ul class="list-main">
-
-                  <li><i class="ti-user"></i> <a href="#"><?php echo ($nombre_usuario); ?></a></li>
+                 
+                <li><i class="ti-user"></i> <a href="#"><?php echo $_SESSION['givenName'] ?> <?php echo $_SESSION['familyName'] ?></a></li>
                   <li>
-                    <i class="ti-power-off"></i><a href="../controller/ACTIONS/act_logout.php">Cerrar sesión</a>
+                  <i class="ti-power-off"></i><a href="../controller/ACTIONS/act_logout_google.php">Cerrar sesión</a>
                   </li>
                 </ul>
               </div>
@@ -168,7 +164,7 @@ $nombre_usuario = $_SESSION['NOMBRE_USUARIO'];
             <div class="col-lg-8 col-md-7 col-12">
               <div class="search-bar-top">
                 <div class="search-bar">
-
+                  
                   <form>
                     <input
                       name="search"
@@ -183,9 +179,9 @@ $nombre_usuario = $_SESSION['NOMBRE_USUARIO'];
             <div class="col-lg-2 col-md-3 col-12">
               <div class="right-bar">
                 <!-- Search Form -->
-
+                
                   <!-- Shopping Item -->
-
+                 
                   <!--/ End Shopping Item -->
                 </div>
               </div>
@@ -206,7 +202,7 @@ $nombre_usuario = $_SESSION['NOMBRE_USUARIO'];
                       <div class="nav-inner">
                         <ul class="nav main-menu menu navbar-nav">
                           <li class="active"><a href="shop-grid.php">Inicio</a></li>
-                          <li><a href="shop-grid-productos.php">Productos <span class="new">New</span> </a></li>
+                          <li><a href="#">Productos <span class="new">New</span> </a></li>
 
                           <li><a href="#">Servicios</a></li>
 
@@ -227,7 +223,7 @@ $nombre_usuario = $_SESSION['NOMBRE_USUARIO'];
     <!--/ End Header -->
 
     <!-- Breadcrumbs -->
-
+    
     <!-- End Breadcrumbs -->
 
     <!-- Product Style -->
@@ -248,13 +244,13 @@ $nombre_usuario = $_SESSION['NOMBRE_USUARIO'];
               </div>
               <!--/ End Single Widget -->
               <!-- Shop By Price -->
-
+              
               <!--/ End Shop By Price -->
               <!-- Single Widget -->
-
+             
               <!--/ End Single Widget -->
               <!-- Single Widget -->
-
+              
               <!--/ End Single Widget -->
             </div>
           </div>
@@ -262,7 +258,7 @@ $nombre_usuario = $_SESSION['NOMBRE_USUARIO'];
             <div class="row">
               <div class="col-12">
                 <!-- Shop Top -->
-
+                
                 <!--/ End Shop Top -->
               </div>
             </div>
@@ -276,10 +272,12 @@ $nombre_usuario = $_SESSION['NOMBRE_USUARIO'];
 
 
             <?php
-for ($j = 0; $j < sizeof($productos_activos); $j++) {
-    $producto = $productos_activos[$j];
+                    for ($j = 0; $j < sizeof($productos_activos); $j++) {
+                        $producto = $productos_activos[$j];
 
-    ?>
+                        if ($producto->getId_categoria() == $id_cat) {
+                        
+                            ?>
                       <div class="col-xl-3 col-lg-4 col-md-4 col-12">
                         <div class="single-product">
                           <div class="product-img">
@@ -313,7 +311,7 @@ for ($j = 0; $j < sizeof($productos_activos); $j++) {
                         </div>
                       </div>
 
-                      <?php }?>
+                      <?php }  }?>
 
 
 
@@ -329,7 +327,7 @@ for ($j = 0; $j < sizeof($productos_activos); $j++) {
     <!--/ End Product Style 1  -->
 
     <!-- Start Shop Newsletter  -->
-
+  
               <!-- End Newsletter Inner -->
             </div>
           </div>
@@ -339,7 +337,7 @@ for ($j = 0; $j < sizeof($productos_activos); $j++) {
     <!-- End Shop Newsletter -->
 
     <!-- Modal -->
-
+    
     <!-- Modal end -->
 
         <!-- Start Shop Services Area -->
